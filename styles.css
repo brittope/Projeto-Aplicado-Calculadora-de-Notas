@@ -1,0 +1,138 @@
+@font-face {
+    font-family: staatliches;
+    src: local(staatliches), url("Staatliches-Regular.ttf");
+ }
+
+ body {
+    font-family: staatliches;
+    color: #fff;
+    background: url("WhatsApp\ Image\ 2023-10-24\ at\ 20.50.09.jpeg");
+    overflow-x: hidden;
+  }
+  
+  .container {
+    width: 400px;
+    margin: 40px auto;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 27vh;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 414px;
+    height: 56px;
+    font-size: 1.15rem;
+    padding: 0.675em 6em 0.675em 1em;
+    background-color: #fff;
+    border: 1px solid #002555;;
+    border-radius: 0.25rem;
+    color: #002555;
+    cursor: pointer;
+    font-family: staatliches;
+  }
+  
+  #nota1 {
+    margin: 10px auto;
+    display: block;
+    width: 411px;
+    height: 56px;
+    border: 1px solid #002555;;
+    border-radius: 5px;
+    font-size: 1.15rem;
+    cursor: pointer;
+    color:#002555;
+    font-family: staatliches;
+  }
+
+  #nota2 {
+    margin: 10px auto;
+    display: block;
+    width: 411px;
+    height: 56px;
+    border: 1px solid #002555;;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color:#002555;
+    font-family: staatliches;
+  }
+
+  #nota3 {
+    margin: 10px auto;
+    display: block;
+    width: 411px;
+    height: 56px;
+    border: 1px solid #002555;;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color:#002555;
+    font-family: staatliches;
+  }
+
+  #nota4 {
+    margin: 10px auto;
+    display: block;
+    width: 411px;
+    height: 56px;
+    border: 1px solid #002555;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color:#002555;
+    font-family: staatliches;
+  }
+
+  nav {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: staatliches;
+    background-color: #002555;
+    height: 9.5vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  position: fixed;
+  top: 8vh;
+  right: 0;
+  width: 19vw;
+  height: 95vh;
+  background: #002555;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-evenly;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in;
+  z-index: 10;
+}
+
+.nav-list li {
+  margin-left: 0px;
+
+}
+
+.mobile-menu {
+  margin-top: 6px;
+  margin-right: -28.5vw;
+  display: block;
+  cursor: pointer; 
+}
+
+.mobile-menu div {
+  width: 35px;
+  height: 3.5px;
+  border-radius: 10px;
+  background: #002555;
+  margin: 6px;
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
