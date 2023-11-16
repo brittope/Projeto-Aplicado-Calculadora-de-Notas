@@ -1,43 +1,64 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html"><img class="logo" src="./images/logo.png"></a>
-            <div class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="nav-list">
-                <li style="-webkit-text-fill-color: lightgrey; cursor: pointer;"><a>Calcular Notas</a></li>
-                <li><a href="races.html">Calendário de Provas</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container">
-        <form id="questionnaire">
-            <div id="questions">
-                <div id="formField">
-                    <div class="custom-select">
-                        <select onchange="add1()" id="tipo">
-                            <option value="" disabled selected>Projeto Aplicado?</option>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
-                        </select>
-                    </div> 
-                </div>
-            </div>
-        </form>
+<header>
+  <div class="header">
+    <div class="logo">
+      <a href="index.html"><img src="WhatsApp Image 2023-11-13 at 11.39.39.jpeg" class="imagem"></a>
     </div>
-    
-    <script src="add.js"></script>
-    <script src="mobile-navbar.js"></script>
+    <div class="menu">
+      <a href="index.html" class="link">
+        <div class="title">Calcular Notas</div>
+        <div class="bar"></div>
+      </a>
+      <a href="calendario.html" class="link">
+        <div class="title">Calend&aacute;rio de Provas</div>
+        <div class="bar"></div>
+      </a>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div id="app" class="calculator">
+    <label for="projectType" id="LabelPA">Projeto Aplicado?</label>
+    <select v-model="isApplied" @change="calculateTotal">
+      <option value="yes">Sim</option>
+      <option value="no">N&atilde;o</option>
+    </select>
+
+    <div v-if="isApplied !== null">
+      <label for="grade1" id="LabelAP1">AP1:</label>
+      <input type="number" v-model="grade1" @input="calculateTotal" placeholder="Digite a nota da AP1" max="10" min="0">
+
+      <label for="grade2">AP2:</label>
+      <input type="number" v-model="grade2" @input="calculateTotal" placeholder="Digite a nota da AP2" max="10" min="0">
+
+      <label for="grade3">AC:</label>
+      <input type="number" v-model="grade3" @input="calculateTotal" placeholder="Digite a nota da AC" max="10" min="0">
+
+      <div v-if="total >= 30 && total < 70">
+        <label for="additionalGrade">AS:</label>
+        <input type="number" v-model="additionalGrade" @input="calculateTotal" placeholder="Digite a nota da AS" max="10" min="0">
+      </div>
+
+      <div class="container-bar">
+        <progress max="100" :value="progress"></progress>
+        <span class="progress-value">{{ progress }}</span>
+        <div class="text">
+        <p id="resultado">{{ resultMessage }}</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app.js"></script>
+  </div>
+</div>
 </body>
 </html>
