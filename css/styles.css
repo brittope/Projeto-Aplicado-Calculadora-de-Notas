@@ -1,6 +1,6 @@
 @font-face {
     font-family: staatliches;
-    src: local(staatliches), url("Staatliches-Regular.ttf");
+    src: local(staatliches), url("assets/Staatliches-Regular.ttf");
  }
 
 body {
@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-family: staatliches;
     color: #002555;
-    background: url("WhatsApp\ Image\ 2023-10-24\ at\ 20.50.09.jpeg");
+    background: url("assets/Background.jpeg");
     overflow-x: hidden;
   }
 
